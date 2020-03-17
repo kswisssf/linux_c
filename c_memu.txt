@@ -1,0 +1,45 @@
+一、前言：
+   APP程序设计规划，主要针对应用开发过程中常见的案例总结。
+   参考书籍《UNIX环境高级编程》第三版 百度网盘和本地均有！
+
+二、目录:
+
+   linnux_app:
+   	|--app_menu.txt  
+	|--README.md
+   	|--common  	  
+   	|--IPC
+	   |--pipe  	
+	   |--queue  
+	   |--semaphore  
+	   |--shmem_1  
+	   |--shmem_2  
+	   \--signal  
+	|--pthread_base  
+	|--pthread_sync  
+	   |--sync_book   	
+	   |--mutex_sync  
+	   |--rwlock_sync  
+	   |--cond_sync 
+	   |--
+  	|--Dir
+	   |--dir_base 
+	   |--dir_ctrl
+	   |--dir_dup
+	   |--dir_fcntl 
+  	|--File_IO
+	   |--
+	|--Func_design
+	   |--   
+	\--stdio  	
+	   |--errno  
+	   |--fflush  
+	   |--printf
+	   |--
+      
+
+三、预增加
+  1.函数指针调用和回调函数差异
+  2.回调函数深度操作,
+      
+
