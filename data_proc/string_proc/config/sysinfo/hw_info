@@ -1,0 +1,12 @@
+soc=FH8852
+phy=IP101G
+wifi=no
+audio_in=no
+audio_out=no
+sd=no
+cvbs=no
+sensor_support=jxk03_mipi
+sensor_support=ovos05_mipi
+sensor_support=jxf22_mipi
+sensor_support=gc4633_mipi
+sensor=auto

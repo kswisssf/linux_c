@@ -1,0 +1,3 @@
+fw_ver_major=1
+fw_revision=0
+fw_ver_format=v[major:2].[revision:2].[year:2][month:2][day:2].[hour:2][minute:2]

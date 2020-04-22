@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ipc_config>
+	<system>
+        <db_revision>12000100</db_revision>
+        <users>
+            <user>
+                <username>super</username>
+                <password>ygsuper</password>
+            </user>
+            <user>
+                <username>admin</username>
+                <password>123456</password>
+            </user>
+        </users>
+        <onvif_auth>false</onvif_auth>
+    </system>
+	<video_encoder_configs>
+		<video_encoder_config>
+            <flag>
+                <h264>false</h264>
+                <h265>true</h265>
+            </flag>
+			<token>V_ENC_000</token>
+			<framerate>20</framerate>
+			<bitrate_limit>2048</bitrate_limit>
+			<rate_control_mode>vbr</rate_control_mode>
+		</video_encoder_config>
+		<video_encoder_config>
+            <flag>
+                <h264>false</h264>
+                <h265>true</h265>
+            </flag>
+			<token>V_ENC_001</token>
+			<framerate>20</framerate>
+			<bitrate_limit>1024</bitrate_limit>
+			<rate_control_mode>vbr</rate_control_mode>
+		</video_encoder_config>
+	</video_encoder_configs>
+	<video_encoder_configs_options>
+		<video_encoder_config_options>
+            <flag>
+                <h264>false</h264>
+                <h265>true</h265>
+            </flag>
+			<video_encoder_config_token>V_ENC_000</video_encoder_config_token>
+		</video_encoder_config_options>
+		<video_encoder_config_options>
+            <flag>
+                <h264>false</h264>
+                <h265>true</h265>
+            </flag>
+			<video_encoder_config_token>V_ENC_001</video_encoder_config_token>
+<!--
+			<h264>
+				<resolutions_available>
+					<resolution><width>640</width><height>360</height></resolution>
+                    <resolution><width>528</width><height>384</height></resolution>
+                    <resolution><width>352</width><height>288</height></resolution>
+                    <resolution><width>352</width><height>240</height></resolution>
+				</resolutions_available>
+			</h264>
+-->
+		</video_encoder_config_options>
+	</video_encoder_configs_options>
+</ipc_config>
