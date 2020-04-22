@@ -56,7 +56,15 @@ ii、目录:
       
 
 三、预增加
-  1.函数指针调用和回调函数差异
-  2.回调函数深度操作,
+  1.函数指针调用和回调函数差异 (2020/03/15)
+  2.回调函数深度操作, (2020/03/15)
+  3.inline (2020/03/24)
+  4.C字符串——库函数系列（strcpy/strcat/strcmp/str/strncpy/strncat/
+    strncmp/strstr/strchr/strrchr/strspn/strcspn/strtok/strerror/strpbrk/atoi）
+  5.字符分类函数：isalnum/isalpha/iscntrl/isdigit/isgraph/islower/
+  6.字符转换
+  7.位操作
+  8.strchr函数功能为在一个串中查找给定字符的第一个匹配之处.
+    
       
 
