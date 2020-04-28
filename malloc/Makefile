@@ -9,7 +9,7 @@ else
 endif
 
 
-BIN = str_base
+BIN = malloc
 
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:%.C = %.o)
