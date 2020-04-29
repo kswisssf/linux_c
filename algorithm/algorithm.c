@@ -35,12 +35,13 @@ void crypt_demo()
 	char passwd[13];
 	char *key;
 	char slat[2];
+	//getpass()函数用于从控制台输入一行字符串，关闭了回显（输入时不显示输入的字符串），适用于用密码的输入。
 	key = getpass("Input First Password:");
 
 	slat[0] = key[0];
 	slat[1] = key[1];
 	strcpy(passwd, crypt(key, slat));
-
+	//getpass()函数用于从控制台输入一行字符串，关闭了回显（输入时不显示输入的字符串），适用于用密码的输入。
 	key = getpass("Input Second Password:");
 	slat[0] = passwd[0];
 	slat[1] = passwd[1];

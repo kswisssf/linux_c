@@ -141,13 +141,12 @@ C语言字符串操作总结大全
 /* 将字符串a 与字符串b转换成数字后相加*/
 void atof_demo()
 {
-	char *a=”-100.23”;
-	char *b=”200e-2”;
+	char *a= "-100.23";
+	char *b= "200e-2";
 	float c;
-	c=atof(a)+atof(b);
-	printf(“c=%.2f\n”,c);
+	c = atof(a) + atof(b);
+	printf("c=%.2f\n", c);
 }
-
 
 /*
 atoi（将字符串转换成整型数）
@@ -165,11 +164,11 @@ atoi（将字符串转换成整型数）
 /* 将字符串a 与字符串b转换成数字后相加*/
 void atoi_demo()
 {
-	char a[]=”-100”;
-	char b[]=”456”;
+	char a[]="-100";
+	char b[]="456";
 	int c;
-	c=atoi(a)+atoi(b);
-	printf(c=%d\n”,c);
+	c = atoi(a) + atoi(b);
+	printf("c=%d\n", c);
 }
 
 
@@ -189,11 +188,11 @@ void atoi_demo()
 /*将字符串a与字符串b转换成数字后相加*/
 void atol_demo()
 {
-	char a[]=”1000000000”;
-	char b[]=” 234567890”;
+	char a[] = "1000000000";
+	char b[] = "234567890";
 	long c;
-	c=atol(a)+atol(b);
-	printf(“c=%d\n”,c);
+	c = atol(a) + atol(b);
+	printf("c=%d\n", c);
 }
 
 /*
@@ -210,14 +209,14 @@ gcvt（将浮点型数转换为字符串，取四舍五入）
 */
 void gcvt_demo()
 {
-	double a=123.45;
-	double b=-1234.56;
+	double a = 123.45;
+	double b = -1234.56;
 	char *ptr;
 	int decpt,sign;
-	gcvt(a,5,ptr);
-	printf(“a value=%s\n”,ptr);
-	ptr=gcvt(b,6,ptr);
-	printf(“b value=%s\n”,ptr);
+	gcvt(a, 5, ptr);
+	printf("a value=%s\n", ptr);
+	ptr = gcvt(b, 6, ptr);
+	printf("b value=%s\n", ptr);
 }
 
 /*
@@ -239,12 +238,12 @@ strtod（将字符串转换成浮点数）
 /*将字符串a，b，c 分别采用10，2，16 进制转换成数字*/
 void strtod_demo()
 {
-	char a[]=”1000000000”;
-	char b[]=”1000000000”;
-	char c[]=”ffff”;
-	printf(“a=%d\n”,strtod(a,NULL,10));
-	printf(“b=%d\n”,strtod(b,NULL,2));
-	printf(“c=%d\n”,strtod(c,NULL,16));
+	char a[] = "1000000000";
+	char b[] = "1000000000";
+	char c[] = "ffff";
+	printf("a=%d\n", strtod(a, NULL, 10));
+	printf("b=%d\n", strtod(b, NULL, 2));
+	printf("c=%d\n", strtod(c, NULL, 16));
 }
 
 /*
@@ -269,12 +268,12 @@ strtol（将字符串转换成长整型数）
 //#include <stdlib.h>
 void strtol_demo()
 {
-	char a[]=”1000000000”;
-	char b[]=”1000000000”;
-	char c[]=”ffff”;
-	printf(“a=%d\n”,strtol(a,NULL,10));
-	printf(“b=%d\n”,strtol(b,NULL,2));
-	printf(“c=%d\n”,strtol(c,NULL,16));
+	char a[] = "1000000000";
+	char b[] = "1000000000";
+	char c[] = "ffff";
+	printf("a=%d\n", strtol(a, NULL, 10));
+	printf("b=%d\n", strtol(b, NULL, 2));
+	printf("c=%d\n", strtol(c, NULL, 16));
 }
 
 /*
@@ -307,11 +306,11 @@ toascii（将整型数转换成合法的ASCII 码字符）
 */
 void toascii_demo()
 {
-	int a=217;
+	int a = 217;
 	char b;
-	printf(“before toascii () : a value =%d(%c)\n”,a,a);
-	b=toascii(a);
-	printf(“after toascii() : a value =%d(%c)\n”,b,b);
+	printf("before toascii () : a value =%d(%c)\n", a, a);
+	b = toascii(a);
+	printf("after toascii() : a value =%d(%c)\n", b, b);
 }
 
 /*
@@ -330,12 +329,12 @@ tolower（将大写字母转换成小写字母）
 
 void tolower_demo()
 {
-	char s[]=”aBcDeFgH12345;!#$”;
+	char s[] = "aBcDeFgH12345;!#$";
 	int i;
-	printf(“before tolower() : %s\n”,s);
+	printf("before tolower() : %s\n",s);
 	for(i=0;I<sizeof(s);i++)
-	s[i]=tolower(s[i]);
-	printf(“after tolower() : %s\n”,s);
+		s[i]=tolower(s[i]);
+	printf("after tolower() : %s\n",s);
 }
 
 /*
@@ -353,12 +352,12 @@ toupper（将小写字母转换成大写字母）
 /* 将s字符串内的小写字母转换成大写字母*/
 void toupper()
 {
-	char s[]=”aBcDeFgH12345;!#$”;
+	char s[]="aBcDeFgH12345;!#$";
 	int i;
-	printf(“before toupper() : %s\n”,s);
+	printf("before toupper(): %s\n",s);
 	for(i=0;I<sizeof(s);i++)
 		s[i]=toupper(s[i]);
-	printf(“after toupper() : %s\n”,s);
+	printf("after toupper(): %s\n",s);
 }
 
 /*
