@@ -112,8 +112,138 @@ C语言字符串操作总结大全
 	在strToken 串中查找下一个标记, strDelimit字符集则指定了在当前查找调用中可能遇到的分界符. 返回一个指针, 指向在strToken中找到的下一个标记. 如果找不到标
 	记, 就返回NULL值. 每次调用都会修改strToken内容, 用NULL字符替换遇到的每个分界符.
 
+	24.strcoll（采用目前区域的字符排列次序来比较字符串）
+	相关函数
+		strcmp，bcmp，memcmp，strcasecmp，strncasecmp
+	表头文件
+		#include<string.h>
+	定义函数
+		int strcoll( const char *s1, const char *s2);
+	函数说明
+		strcoll()会依环境变量LC_COLLATE所指定的文字排列次序来比较s1和s2 字符串。
+	返回值
+		若参数s1和s2字符串相同则返回0。s1若大于s2则返回大于0的值。s1若小于s2则返回小于0 的值。
+	附加说明
+		若LC_COLLATE为"POSIX"或"C"，则strcoll()与strcmp()作用完全相同。
+	范例
+		参考strcmp()。
 */
 
+/*
+strcspn（返回字符串中连续不含指定字符串内容的字符数）
+相关函数
+	strspn
+表头文件
+	#inclued<string.h>
+定义函数
+	size_t strcspn ( const char *s,const char * reject);
+函数说明
+	strcspn()从参数s字符串的开头计算连续的字符，而这些字符都完全不在参数reject 所指的字符串中。简单地说，若strcspn()返回的数值为n，则代表字符串s开头连续有n个字符都不含字符串reject内的字符。
+返回值
+	返回字符串s开头连续不含字符串reject内的字符数目。
+范例执行
+5 //只计算到“ ”的出现，所以返回“Linux”的长度
+33 //计算到出现“/”或“－”，所以返回到“6”的长度
+30 // 计算到出现数字字符为止，所以返回“3”出现前的长度
+*/
+#include <string.h>
+void strcspn_demo()
+{
+	char *str="Linux was first developed for 386/486-based pcs.";
+	printf("%d\n",strcspn(str," "));
+	printf("%d\n",strcspn(str,"/-"));
+	printf("%d\n",strcspn(str,"1234567890"));
+}
+
+
+/*
+strpbrk（查找字符串中第一个出现的指定字符）
+相关函数
+	index，memchr，rindex，strpbrk，strsep，strspn，strstr，strtok
+表头文件
+	#include <include.h>
+定义函数
+	char *strpbrk(const char *s,const char *accept);
+函数说明
+	strpbrk()用来找出参数s 字符串中最先出现存在参数accept 字符串中的任意字符。
+返回值
+	如果找到指定的字符则返回该字符所在地址，否则返回0。
+范例执行
+1.23E+29
+*/
+void strpbrk_demo()
+{
+	char *s = "0123456789012345678901234567890";
+	char *p;
+
+	p = strpbrk(s, "a1 839"); /*1会最先在s字符串中找到*/
+	printf("%s\n",p);
+
+	p = strpbrk(s, "4398");/*3 会最先在s 字符串中找到*/
+	printf("%s\n",p);
+}
+
+/*
+index（查找字符串中第一个出现的指定字符）
+相关函数
+	rindex，srechr，strrchr
+表头文件
+	#include<string.h>
+定义函数
+	char * index( const char *s, int c);
+函数说明
+	index()用来找出参数s字符串中第一个出现的参数c地址，然后将该字符出现的地址返回。字符串结束字符(NULL)也视为字符串一部分。
+返回值
+	如果找到指定的字符则返回该字符所在地址，否则返回0。
+范例执行
+5.68E+25
+*/
+
+#include <string.h>
+void index_demo()
+{
+	char *s ="0123456789012345678901234567890";
+	char *p;
+	p =index(s,'5');
+	printf("%s\n", p);
+}
+
+/*
+strtok（分割字符串）
+相关函数
+	index，memchr，rindex，strpbrk，strsep，strspn，strstr
+表头文件
+	#include<string.h>
+定义函数
+	char * strtok(char *s,const char *delim);
+函数说明
+	strtok()用来将字符串分割成一个个片段。参数s指向欲分割的字符串，参数delim则为分割字符串，
+	当strtok()在参数s的字符串中发现到参数delim的分割字符时则会将该字符改为\0 字符。
+	在第一次调用时，strtok()必需给予参数s字符串，往后的调用则将参数s设置成NULL。每次调用成功则返回
+	下一个分割后的字符串指针。
+返回值
+	返回下一个分割后的字符串指针，如果已无从分割则返回NULL。
+范例执行
+ab cd ef;gh i jkl;mnop;qrs tu vwx y;z     //－与:字符已经被\0 字符取代
+*/
+#include <string.h>
+void strtok_demo()
+{
+	char s[]="ab-cd : ef;gh :i-jkl;mnop;qrs-tu: vwx-y;z";
+	char *delim="-: ";
+	char *p;
+
+	printf("%s ", strtok(s,delim));
+	
+	while((p=strtok(NULL, delim)))
+		printf("%s ",p);
+	
+	printf("\n");
+}
+
+
+
+/*************************************************************/
 /*
 2)字符串到数值类型的转换 (#include <stdlib.h>)
 	strtod(p, ppend) 			从字符串p中转换double类型数值,并将后续的字符串指针存储到ppend指向的char* 类型存储。
@@ -332,8 +462,9 @@ void tolower_demo()
 	char s[] = "aBcDeFgH12345;!#$";
 	int i;
 	printf("before tolower() : %s\n",s);
-	for(i=0;I<sizeof(s);i++)
+	for(i=0; i<sizeof(s); i++)
 		s[i]=tolower(s[i]);
+
 	printf("after tolower() : %s\n",s);
 }
 
@@ -350,14 +481,17 @@ toupper（将小写字母转换成大写字母）
 */
 
 /* 将s字符串内的小写字母转换成大写字母*/
-void toupper()
+void toupper_demo()
 {
 	char s[]="aBcDeFgH12345;!#$";
+	char ss[]={0};
 	int i;
 	printf("before toupper(): %s\n",s);
-	for(i=0;I<sizeof(s);i++)
-		s[i]=toupper(s[i]);
-	printf("after toupper(): %s\n",s);
+
+	for(i=0; i<sizeof(s); i++)
+		ss[i] = toupper(s[i]);
+
+	printf("after toupper(): %s\n",ss);
 }
 
 /*
@@ -412,3 +546,8 @@ strcpy和memcpy主要有以下3方面的区别。
 
 
 
+int main(int argc, char const *argv[])
+{
+	/* code */
+	return 0;
+}
